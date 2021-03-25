@@ -1,0 +1,32 @@
+#ifndef MAINWINDOW2_H
+#define MAINWINDOW2_H
+
+#include <QMainWindow>
+
+namespace Ui {
+class MainWindow2;
+}
+
+class MainWindow2 : public QMainWindow
+{
+    Q_OBJECT
+
+public:
+    explicit MainWindow2(QWidget *parent = 0);
+    ~MainWindow2();
+
+private slots:
+    void on_russian_language_clicked();
+    void on_english_language_clicked();
+    void on_new_latter_clicked();
+    void on_OK_clicked();
+    void on_replay_clicked();
+    void on_russian_language_triggered();
+    void on_english_language_triggered();
+    void on_tajik_language_triggered();
+
+private:
+    Ui::MainWindow2 *ui;
+};
+
+#endif // MAINWINDOW2_H

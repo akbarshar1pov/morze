@@ -1,0 +1,10 @@
+release/history.o
+release/main.o
+release/mainwindow.o
+release/mainwindow2.o
+release/mainwindow3.o
+release/qrc_res.o
+release/moc_history.o
+release/moc_mainwindow.o
+release/moc_mainwindow2.o
+release/moc_mainwindow3.o

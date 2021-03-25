@@ -1,0 +1,25 @@
+<RCC>
+    <qresource prefix="/bd_words"/>
+    <qresource prefix="/">
+        <file>file/English.txt</file>
+        <file>file/Russian.txt</file>
+        <file>img/change.png</file>
+        <file>img/exit.png</file>
+        <file>img/logo.png</file>
+        <file>img/play.png</file>
+        <file>img/sound.png</file>
+        <file>img/dark-mode.png</file>
+        <file>img/light-mode.png</file>
+        <file>img/folder.png</file>
+        <file>img/learn.png</file>
+        <file>img/letters.png</file>
+        <file>img/save.png</file>
+        <file>img/sentences.png</file>
+        <file>img/test.png</file>
+        <file>img/view.png</file>
+        <file>img/words.png</file>
+        <file>img/language.png</file>
+        <file>img/themes.png</file>
+        <file>img/history.png</file>
+    </qresource>
+</RCC>
