@@ -4,6 +4,7 @@
 #include <QMessageBox>
 #include <QTextStream>
 #include <QDir>
+#include <QString>
 
 
 QString NameLan = ":/file/English.txt";

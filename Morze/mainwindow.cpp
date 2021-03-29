@@ -382,21 +382,21 @@ QString MainWindow::to_morze(const QString & str)
     for (int i = 0; i < str.size(); ++i) {
         if (is_russian(str[i]))
             for (int j = 0; j < 33; ++j) {
-                if (str[i] == Rus[j]) {
-                    _return += mrzRus[j];
+                if (str[i] == RussianLetters[j]) {
+                    _return += RussianMorseCode[j];
                     _return += " ";
                 }
             }
         else
             for (int j = 0; j < 26; ++j) {
-                if (str[i] == Eng[j]) {
-                    _return += mrzEng[j];
+                if (str[i] == EnglishLetters[j]) {
+                    _return += EnglishMorseCode[j];
                     _return += " ";
                 }
             }
         for (int j = 0; j < 25; ++j) {
-            if (str[i] == numberAndPunct[j]) {
-                _return += numberAndPunctMrz[j];
+            if (str[i] == RumberAndPunct[j]) {
+                _return += NumberAndPunctMorseCode[j];
                 _return += " ";
             }
         }
@@ -409,7 +409,7 @@ QString MainWindow::to_morze(const QString & str)
 bool MainWindow::is_russian(QChar ch)
 {
     for (int j = 0; j < 33; ++j) {
-        if (ch == Rus[j]) {
+        if (ch == RussianLetters[j]) {
             return true;
         }
     }
@@ -424,7 +424,7 @@ QString MainWindow::toREP(QString str)
     QString morz;
     for (int i = 0; i < str.size(); ++i) {
         if (str[i] == '.') {
-            str[i] = mrzRus[5].at(0);
+            str[i] = RussianMorseCode[5].at(0);
         }
     }
     for (int i = 0; i < str.size(); ++i) {
@@ -433,22 +433,22 @@ QString MainWindow::toREP(QString str)
         } else {
             if (Ru) {
                 for (int i = 0; i < 33; ++i) {
-                    if (morz == mrzRus[i]) {
-                        _return += Rus[i];
+                    if (morz == RussianMorseCode[i]) {
+                        _return += RussianLetters[i];
                         break;
                     }
                 }
             }  else {
                 for (int i = 0; i < 26; ++i) {
-                    if (morz == mrzEng[i]) {
-                        _return += Eng[i];
+                    if (morz == EnglishMorseCode[i]) {
+                        _return += EnglishLetters[i];
                         break;
                     }
                 }
             }
             for (int i = 0; i < 25; ++i) {
-                if (morz == numberAndPunctMrz[i]) {
-                    _return += numberAndPunct[i];
+                if (morz == NumberAndPunctMorseCode[i]) {
+                    _return += RumberAndPunct[i];
                     break;
                 }
             }

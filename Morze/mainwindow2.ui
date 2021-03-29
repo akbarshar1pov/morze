@@ -89,7 +89,7 @@
      <rect>
       <x>10</x>
       <y>0</y>
-      <width>219</width>
+      <width>101</width>
       <height>31</height>
      </rect>
     </property>
@@ -97,28 +97,14 @@
      <item>
       <widget class="QPushButton" name="Replay">
        <property name="text">
-        <string>Replay</string>
+        <string/>
        </property>
        <property name="icon">
-        <iconset>
-         <normaloff>../Qt/Morze_/Morze/img/sound-512.png</normaloff>../Qt/Morze_/Morze/img/sound-512.png</iconset>
+        <iconset resource="res.qrc">
+         <normaloff>:/img/sound.png</normaloff>:/img/sound.png</iconset>
        </property>
        <property name="shortcut">
         <string>Ctrl+P</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="NewChar">
-       <property name="text">
-        <string>Новый символ</string>
-       </property>
-       <property name="icon">
-        <iconset>
-         <normaloff>../Qt/Morze_/Morze/img/change.png</normaloff>../Qt/Morze_/Morze/img/change.png</iconset>
-       </property>
-       <property name="shortcut">
-        <string>Ctrl+R</string>
        </property>
       </widget>
      </item>
@@ -165,15 +151,12 @@
     <property name="geometry">
      <rect>
       <x>330</x>
-      <y>130</y>
+      <y>152</y>
       <width>135</width>
-      <height>53</height>
+      <height>31</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_8">
-     <item>
-      <widget class="QLineEdit" name="LANGUAGE"/>
-     </item>
      <item>
       <widget class="QLineEdit" name="otvet"/>
      </item>
