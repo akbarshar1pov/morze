@@ -464,3 +464,8 @@ void MainWindow::on_history_2_triggered()
     history *test = new history();
     test->show();
 }
+
+void MainWindow::on_study_triggered()
+{
+
+}

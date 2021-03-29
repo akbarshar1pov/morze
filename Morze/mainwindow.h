@@ -39,6 +39,8 @@ private slots:
 
     void on_history_2_triggered();
 
+    void on_study_triggered();
+
 private:
     bool Ru;
     bool changed;
