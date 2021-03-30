@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+int index = 0;
+
 namespace Ui {
 class studywindow;
 }
