@@ -94,9 +94,3 @@ void MainWindow2::on_english_language_triggered()
     ui->EngLan->setText("English lenguage");
 }
 
-void MainWindow2::on_tajik_language_triggered()
-{
-    ui->menuLenguage->setTitle("Забон");
-    ui->RusLan->setText("Забони Руссӣ");
-    ui->EngLan->setText("Забони Англисӣ");
-}

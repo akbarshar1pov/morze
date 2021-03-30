@@ -10,6 +10,7 @@
 #include <mainwindow2.h>
 #include <mainwindow3.h>
 #include <history.h>
+#include <studywindow.h>
 
 bool chenger = true;
 
@@ -207,34 +208,6 @@ void MainWindow::on_toRussion_triggered()
     }
 }
 
-void MainWindow::on_toTojik_triggered()
-{
-    setWindowTitle("Коди Морзе");
-    ui->comboBox->setItemText(0, "Коди Морзе");
-    ui->comboBox->setItemText(1, "Забони англисӣ");
-    ui->comboBox->setItemText(2, "Забони русӣ");
-    ui->menu->setTitle("Феҳрист");
-    ui->menu->setTitle("Идора кардан");
-    ui->view->setTitle("Намуд");
-    ui->language->setTitle("Интихоби забон");
-    ui->Thems->setTitle("Интихоби намуд");
-    ui->exit->setText("Баромадан");
-    ui->sound->setText("Пахш кардан");
-    ui->letters->setText("Бо ҳарф");
-    ui->words->setText("Бо калима");
-    ui->sentences->setText("Бо ҷумла");
-    ui->menu_5->setTitle("Омӯзиш/тест");
-    ui->study->setText("Омӯзиш");
-    ui->openFile->setText("Кушодан аз файл");
-    ui->saveFile->setText("Сабткардан ба файл");
-    if(position == 0) {
-        ui->label_2->setText("Коди Морзе");
-    } else if (position == 1) {
-        ui->label_2->setText("Забони англисӣ");
-    } else if (position == 2) {
-        ui->label_2->setText("Забони русӣ");
-    }
-}
 /**<---------------------------------------------------->**/
 
 /*** Темы для окон ***/
@@ -465,7 +438,16 @@ void MainWindow::on_history_2_triggered()
     test->show();
 }
 
+void MainWindow::on_history_triggered()
+{
+    history *test = new history();
+    test->show();
+}
+
 void MainWindow::on_study_triggered()
 {
-
+    studywindow *study = new studywindow();
+    study->show();
 }
+
+

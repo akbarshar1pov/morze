@@ -22,7 +22,6 @@ private slots:
     void on_comboBox_activated(int index);
     void on_toEnglish_triggered();
     void on_toRussion_triggered();
-    void on_toTojik_triggered();
     void on_openFile_triggered();
     void SetIcons();
     void on_night_mode_triggered();
@@ -38,6 +37,8 @@ private slots:
     void on_save_file_triggered();
     void on_history_2_triggered();
     void on_study_triggered();
+
+    void on_history_triggered();
 
 private:
     bool Ru;

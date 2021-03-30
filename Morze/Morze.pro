@@ -13,20 +13,23 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     mainwindow2.cpp \
-    mainwindow3.cpp
+    mainwindow3.cpp \
+    studywindow.cpp
 
 HEADERS += \
     history.h \
     mainwindow.h \
     mainwindow2.h \
     mainwindow3.h \
-    resources.h
+    resources.h \
+    studywindow.h
 
 FORMS += \
     history.ui \
     mainwindow.ui \
     mainwindow2.ui \
-    mainwindow3.ui
+    mainwindow3.ui \
+    studywindow.ui
 
 TRANSLATIONS += \
     Morze_ru_RU.ts

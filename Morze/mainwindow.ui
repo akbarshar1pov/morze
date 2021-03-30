@@ -200,7 +200,6 @@
      </property>
      <addaction name="toRussion"/>
      <addaction name="toEnglish"/>
-     <addaction name="toTojik"/>
     </widget>
     <widget class="QMenu" name="Thems">
      <property name="title">

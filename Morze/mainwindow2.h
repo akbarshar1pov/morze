@@ -23,7 +23,6 @@ private slots:
     void on_replay_clicked();
     void on_russian_language_triggered();
     void on_english_language_triggered();
-    void on_tajik_language_triggered();
 
 private:
     Ui::MainWindow2 *ui;
