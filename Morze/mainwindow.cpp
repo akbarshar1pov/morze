@@ -332,9 +332,13 @@ void MainWindow::on_textInputFields_textChanged()
 /**<---------------------------------------------------->**/
 
 /* Сохранения в файл */
-void MainWindow::on_save_file_triggered()
+
+void MainWindow::on_saveFile_triggered()
 {
-    QString filePath = QFileDialog::getOpenFileName(this, QObject::tr("Открыть файл"));
+    QString filePath = QFileDialog::getSaveFileName(this,
+        tr("Save Address Book"), "",
+        tr("File name (*.txt);;All Files (*)"));
+
     QFile mFile(filePath);
 
     if(!mFile.open(QIODevice::ReadWrite)) {
@@ -346,6 +350,7 @@ void MainWindow::on_save_file_triggered()
     mFile.flush();
     mFile.close();
 }
+
 /**<---------------------------------------------------->**/
 
 /* Перевод в морзе */
@@ -450,4 +455,10 @@ void MainWindow::on_study_triggered()
     study->show();
 }
 
-
+/* сохраняем перевод в истории */
+void MainWindow::on_actionSaveInHistory_triggered()
+{
+    QString buffer = "send to history";
+    ui->textInputFields->setPlainText(buffer);
+}
+/**<---------------------------------------------------->**/
