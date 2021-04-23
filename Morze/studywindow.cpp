@@ -4,7 +4,9 @@
 studywindow::studywindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::studywindow)
-{}
+{
+    ui->setupUi(this);
+}
 
 studywindow::~studywindow()
 {
