@@ -53,6 +53,7 @@ public:
     QAction *study;
     QAction *history;
     QAction *history_2;
+    QAction *actionSaveInHistory;
     QWidget *centralWidget;
     QGridLayout *gridLayout;
     QSplitter *splitter;
@@ -160,6 +161,11 @@ public:
         history_2 = new QAction(MainWindow);
         history_2->setObjectName(QString::fromUtf8("history_2"));
         history_2->setIcon(icon9);
+        actionSaveInHistory = new QAction(MainWindow);
+        actionSaveInHistory->setObjectName(QString::fromUtf8("actionSaveInHistory"));
+        QIcon icon10;
+        icon10.addFile(QString::fromUtf8(":/img/save.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionSaveInHistory->setIcon(icon10);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         gridLayout = new QGridLayout(centralWidget);
@@ -260,14 +266,14 @@ public:
         view->setObjectName(QString::fromUtf8("view"));
         language = new QMenu(view);
         language->setObjectName(QString::fromUtf8("language"));
-        QIcon icon10;
-        icon10.addFile(QString::fromUtf8("img/icons8-language-100.png"), QSize(), QIcon::Normal, QIcon::Off);
-        language->setIcon(icon10);
+        QIcon icon11;
+        icon11.addFile(QString::fromUtf8("img/icons8-language-100.png"), QSize(), QIcon::Normal, QIcon::Off);
+        language->setIcon(icon11);
         Thems = new QMenu(view);
         Thems->setObjectName(QString::fromUtf8("Thems"));
-        QIcon icon11;
-        icon11.addFile(QString::fromUtf8("img/wive_icon.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        Thems->setIcon(icon11);
+        QIcon icon12;
+        icon12.addFile(QString::fromUtf8("img/wive_icon.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        Thems->setIcon(icon12);
         control = new QMenu(menuBar);
         control->setObjectName(QString::fromUtf8("control"));
         menu_5 = new QMenu(menuBar);
@@ -282,6 +288,8 @@ public:
         mainToolBar->addAction(nightMode);
         mainToolBar->addSeparator();
         mainToolBar->addAction(history);
+        mainToolBar->addSeparator();
+        mainToolBar->addAction(actionSaveInHistory);
         menuBar->addAction(menu->menuAction());
         menuBar->addAction(control->menuAction());
         menuBar->addAction(view->menuAction());
@@ -351,6 +359,7 @@ public:
         history->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+H", nullptr));
 #endif // QT_CONFIG(shortcut)
         history_2->setText(QCoreApplication::translate("MainWindow", "\320\230\321\201\321\202\320\276\321\200\320\270\321\217", nullptr));
+        actionSaveInHistory->setText(QCoreApplication::translate("MainWindow", "SaveInHistory", nullptr));
         comboBox->setItemText(0, QCoreApplication::translate("MainWindow", "\320\242\320\265\320\272\321\201\321\202 \342\206\222 \320\272\320\276\320\264 \320\234\320\276\321\200\320\267\320\265", nullptr));
         comboBox->setItemText(1, QCoreApplication::translate("MainWindow", "\320\232\320\276\320\264 \320\234\320\276\321\200\320\267\320\265 \342\206\222 \320\260\320\275\320\263\320\273\320\270\320\271\321\201\320\272\320\270\320\271 \321\217\320\267\321\213\320\272", nullptr));
         comboBox->setItemText(2, QCoreApplication::translate("MainWindow", "\320\232\320\276\320\264 \320\234\320\276\321\200\320\267\320\265 \342\206\222 \321\200\321\203\321\201\321\201\320\272\320\270\320\271 \321\217\320\267\321\213\320\272", nullptr));

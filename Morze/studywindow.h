@@ -2,8 +2,8 @@
 #define STUDYWINDOW_H
 
 #include <QMainWindow>
-
-int index = 0;
+#include <QDebug>
+#include <QDesktopServices>
 
 namespace Ui {
 class studywindow;
