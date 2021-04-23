@@ -167,6 +167,8 @@
    <addaction name="nightMode"/>
    <addaction name="separator"/>
    <addaction name="history"/>
+   <addaction name="separator"/>
+   <addaction name="actionSaveInHistory"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QMenuBar" name="menuBar">
@@ -406,6 +408,15 @@
    </property>
    <property name="text">
     <string>История</string>
+   </property>
+  </action>
+  <action name="actionSaveInHistory">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/img/save.png</normaloff>:/img/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>SaveInHistory</string>
    </property>
   </action>
  </widget>

@@ -40,6 +40,10 @@ private slots:
 
     void on_history_triggered();
 
+    void on_actionSaveInHistory_triggered();
+
+    void on_saveFile_triggered();
+
 private:
     bool Ru;
     bool changed;
