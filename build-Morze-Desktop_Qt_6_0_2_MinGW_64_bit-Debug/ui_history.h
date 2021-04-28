@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
@@ -27,12 +28,13 @@ class Ui_history
 {
 public:
     QWidget *centralwidget;
+    QGridLayout *gridLayout;
     QSplitter *splitter;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout_3;
     QComboBox *comboBox_2;
     QSpacerItem *horizontalSpacer_2;
-    QWidget *widget1;
+    QWidget *layoutWidget1;
     QHBoxLayout *horizontalLayout_4;
     QTextBrowser *text_2;
     QTextBrowser *text_morze_2;
@@ -43,19 +45,20 @@ public:
     {
         if (history->objectName().isEmpty())
             history->setObjectName(QString::fromUtf8("history"));
-        history->resize(700, 377);
+        history->resize(915, 461);
         centralwidget = new QWidget(history);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
+        gridLayout = new QGridLayout(centralwidget);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         splitter = new QSplitter(centralwidget);
         splitter->setObjectName(QString::fromUtf8("splitter"));
-        splitter->setGeometry(QRect(41, 21, 611, 291));
         splitter->setOrientation(Qt::Vertical);
-        widget = new QWidget(splitter);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        horizontalLayout_3 = new QHBoxLayout(widget);
+        layoutWidget = new QWidget(splitter);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        horizontalLayout_3 = new QHBoxLayout(layoutWidget);
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
-        comboBox_2 = new QComboBox(widget);
+        comboBox_2 = new QComboBox(layoutWidget);
         comboBox_2->setObjectName(QString::fromUtf8("comboBox_2"));
         comboBox_2->setEnabled(true);
         comboBox_2->setMinimumSize(QSize(200, 20));
@@ -66,27 +69,30 @@ public:
 
         horizontalLayout_3->addItem(horizontalSpacer_2);
 
-        splitter->addWidget(widget);
-        widget1 = new QWidget(splitter);
-        widget1->setObjectName(QString::fromUtf8("widget1"));
-        horizontalLayout_4 = new QHBoxLayout(widget1);
+        splitter->addWidget(layoutWidget);
+        layoutWidget1 = new QWidget(splitter);
+        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
+        horizontalLayout_4 = new QHBoxLayout(layoutWidget1);
         horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
         horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
-        text_2 = new QTextBrowser(widget1);
+        text_2 = new QTextBrowser(layoutWidget1);
         text_2->setObjectName(QString::fromUtf8("text_2"));
 
         horizontalLayout_4->addWidget(text_2);
 
-        text_morze_2 = new QTextBrowser(widget1);
+        text_morze_2 = new QTextBrowser(layoutWidget1);
         text_morze_2->setObjectName(QString::fromUtf8("text_morze_2"));
 
         horizontalLayout_4->addWidget(text_morze_2);
 
-        splitter->addWidget(widget1);
+        splitter->addWidget(layoutWidget1);
+
+        gridLayout->addWidget(splitter, 0, 0, 1, 1);
+
         history->setCentralWidget(centralwidget);
         menubar = new QMenuBar(history);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 700, 26));
+        menubar->setGeometry(QRect(0, 0, 915, 26));
         history->setMenuBar(menubar);
         statusbar = new QStatusBar(history);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
