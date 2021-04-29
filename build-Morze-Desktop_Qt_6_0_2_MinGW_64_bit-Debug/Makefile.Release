@@ -139,15 +139,21 @@ release/qrc_res.cpp: ../Morze/res.qrc \
 		../Morze/img/language.png \
 		../Morze/img/folder.png \
 		../Morze/img/exit.png \
+		../Morze/img/1_Step_for_study_morze_code.jpg \
 		../Morze/img/letters.png \
 		../Morze/img/change.png \
+		../Morze/img/2_Step_for_study_morze_code.jpg \
+		../Morze/img/4_Step_for_study_morze_code.jpg \
 		../Morze/img/sound.png \
+		../Morze/img/6_Step_for_study_morze_code.jpg \
 		../Morze/img/learn.png \
+		../Morze/img/5_Step_for_study_morze_code.jpg \
 		../Morze/img/words.png \
 		../Morze/img/sentences.png \
 		../Morze/img/dark-mode.png \
 		../Morze/img/save.png \
 		../Morze/img/light-mode.png \
+		../Morze/img/3_Step_for_study_morze_code.jpg \
 		../Morze/img/play.png \
 		../Morze/img/test.png
 	C:\Qt\6.0.2\mingw81_64\bin\rcc.exe -name res ..\Morze\res.qrc -o release\qrc_res.cpp
@@ -834,6 +840,9 @@ release/moc_studywindow.cpp: ../Morze/studywindow.h \
 		C:/Qt/6.0.2/mingw81_64/include/QtGui/QTransform \
 		C:/Qt/6.0.2/mingw81_64/include/QtWidgets/qtabwidget.h \
 		C:/Qt/6.0.2/mingw81_64/include/QtGui/qicon.h \
+		C:/Qt/6.0.2/mingw81_64/include/QtCore/QDebug \
+		C:/Qt/6.0.2/mingw81_64/include/QtGui/QDesktopServices \
+		C:/Qt/6.0.2/mingw81_64/include/QtGui/qdesktopservices.h \
 		release/moc_predefs.h \
 		C:/Qt/6.0.2/mingw81_64/bin/moc.exe
 	C:\Qt\6.0.2\mingw81_64\bin\moc.exe $(DEFINES) --include F:/REP/morze/build-Morze-Desktop_Qt_6_0_2_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.0.2/mingw81_64/mkspecs/win32-g++ -IF:/REP/morze/Morze -IC:/Qt/6.0.2/mingw81_64/include -IC:/Qt/6.0.2/mingw81_64/include/QtWidgets -IC:/Qt/6.0.2/mingw81_64/include/QtGui -IC:/Qt/6.0.2/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\Morze\studywindow.h -o release\moc_studywindow.cpp
@@ -1031,11 +1040,12 @@ release/history.o: ../Morze/history.cpp ../Morze/history.h \
 		C:/Qt/6.0.2/mingw81_64/include/QtWidgets/qrubberband.h \
 		C:/Qt/6.0.2/mingw81_64/include/QtWidgets/qframe.h \
 		C:/Qt/6.0.2/mingw81_64/include/QtCore/qabstractitemmodel.h \
-		C:/Qt/6.0.2/mingw81_64/include/QtWidgets/QHBoxLayout \
-		C:/Qt/6.0.2/mingw81_64/include/QtWidgets/qboxlayout.h \
+		C:/Qt/6.0.2/mingw81_64/include/QtWidgets/QGridLayout \
+		C:/Qt/6.0.2/mingw81_64/include/QtWidgets/qgridlayout.h \
 		C:/Qt/6.0.2/mingw81_64/include/QtWidgets/qlayout.h \
 		C:/Qt/6.0.2/mingw81_64/include/QtWidgets/qlayoutitem.h \
-		C:/Qt/6.0.2/mingw81_64/include/QtWidgets/qgridlayout.h \
+		C:/Qt/6.0.2/mingw81_64/include/QtWidgets/qboxlayout.h \
+		C:/Qt/6.0.2/mingw81_64/include/QtWidgets/QHBoxLayout \
 		C:/Qt/6.0.2/mingw81_64/include/QtWidgets/QMenuBar \
 		C:/Qt/6.0.2/mingw81_64/include/QtWidgets/qmenubar.h \
 		C:/Qt/6.0.2/mingw81_64/include/QtWidgets/qmenu.h \
@@ -1419,7 +1429,10 @@ release/mainwindow.o: ../Morze/mainwindow.cpp ../Morze/mainwindow.h \
 		../Morze/mainwindow2.h \
 		../Morze/mainwindow3.h \
 		../Morze/history.h \
-		../Morze/studywindow.h
+		../Morze/studywindow.h \
+		C:/Qt/6.0.2/mingw81_64/include/QtCore/QDebug \
+		C:/Qt/6.0.2/mingw81_64/include/QtGui/QDesktopServices \
+		C:/Qt/6.0.2/mingw81_64/include/QtGui/qdesktopservices.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\Morze\mainwindow.cpp
 
 release/mainwindow2.o: ../Morze/mainwindow2.cpp ../Morze/mainwindow2.h \
@@ -1912,6 +1925,9 @@ release/studywindow.o: ../Morze/studywindow.cpp ../Morze/studywindow.h \
 		C:/Qt/6.0.2/mingw81_64/include/QtGui/QTransform \
 		C:/Qt/6.0.2/mingw81_64/include/QtWidgets/qtabwidget.h \
 		C:/Qt/6.0.2/mingw81_64/include/QtGui/qicon.h \
+		C:/Qt/6.0.2/mingw81_64/include/QtCore/QDebug \
+		C:/Qt/6.0.2/mingw81_64/include/QtGui/QDesktopServices \
+		C:/Qt/6.0.2/mingw81_64/include/QtGui/qdesktopservices.h \
 		ui_studywindow.h \
 		C:/Qt/6.0.2/mingw81_64/include/QtCore/QVariant \
 		C:/Qt/6.0.2/mingw81_64/include/QtGui/QAction \

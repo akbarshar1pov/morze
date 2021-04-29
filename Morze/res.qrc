@@ -22,6 +22,15 @@
         <file>img/themes.png</file>
         <file>img/history.png</file>
         <file>img/englishAlphabet&amp;Numbers.jpg</file>
+<<<<<<< HEAD
         <file>file/history.txt</file>
+=======
+        <file>img/1_Step_for_study_morze_code.jpg</file>
+        <file>img/2_Step_for_study_morze_code.jpg</file>
+        <file>img/3_Step_for_study_morze_code.jpg</file>
+        <file>img/4_Step_for_study_morze_code.jpg</file>
+        <file>img/5_Step_for_study_morze_code.jpg</file>
+        <file>img/6_Step_for_study_morze_code.jpg</file>
+>>>>>>> 11ab8ea1fdb3880fffe308f0c71e99ebc65cf88a
     </qresource>
 </RCC>
