@@ -22,5 +22,6 @@
         <file>img/themes.png</file>
         <file>img/history.png</file>
         <file>img/englishAlphabet&amp;Numbers.jpg</file>
+        <file>file/history.txt</file>
     </qresource>
 </RCC>

@@ -458,7 +458,37 @@ void MainWindow::on_study_triggered()
 /* сохраняем перевод в истории */
 void MainWindow::on_actionSaveInHistory_triggered()
 {
-    QString buffer = "send to history";
-    ui->textInputFields->setPlainText(buffer);
+//    QDateTime time = QDateTime();
+//    QString datatime = time.currentDateTime().toString();
+    QString NameLan = "/file/history.txt";
+    QString text = ui->textInputFields->toPlainText();
+    QString translate = ui->textBrowser->toPlainText();
+//    QFile history_file(NameLan);
+//    if(history_file.open(QIODevice::WriteOnly | QIODevice::Append | QFile::Text)){
+//        QTextStream stream(&history_file);
+//        stream << "#"<< datatime << "#\n" << text << "\n" << "@\n" << translate << "\n";
+//        history_file.flush();
+//        history_file.close();
+//        ui->statusBar->showMessage(QObject::tr("Сохранен"));
+//    }
+//    else{
+//        if(history_file.exists()){
+//            qDebug() << "error: " << history_file.errorString();
+//        }
+//        else{
+//            ui->statusBar->showMessage(QObject::tr("Ошибка сохранения"));
+//        }
+
+//    }
+    QFile file(NameLan);
+    if(!file.open(QIODevice::WriteOnly | QIODevice::Text)){
+        ui->statusBar->showMessage(NameLan + " error open",5000);
+        return;
+    }
+    QTextStream stream(&file), lineIn(&text);
+    for(int i=0;!stream.atEnd();++i){
+        stream << text << "\n" << translate << "\n";
+    }
+    file.close();
 }
 /**<---------------------------------------------------->**/
