@@ -32,8 +32,6 @@ private slots:
     void on_WindowVista_triggered();
     void on_nightMode_triggered();
     void on_letters_triggered();
-    void on_words_triggered();
-    void on_sentences_triggered();
     void on_textInputFields_textChanged();
     void on_save_file_triggered();
     void on_history_2_triggered();

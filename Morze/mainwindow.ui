@@ -236,7 +236,6 @@
       <string>Тест</string>
      </property>
      <addaction name="letters"/>
-     <addaction name="words"/>
     </widget>
     <addaction name="study"/>
     <addaction name="menu_6"/>

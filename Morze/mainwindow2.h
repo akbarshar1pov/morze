@@ -23,6 +23,9 @@ private slots:
     void on_replay_clicked();
     void on_russian_language_triggered();
     void on_english_language_triggered();
+    void on_EngLan_clicked();
+
+    void on_sound_type_stateChanged(int arg1);
 
 private:
     Ui::MainWindow2 *ui;

@@ -17,7 +17,7 @@ MainWindow2::MainWindow2(QWidget *parent) :
     ui->setupUi(this);
     positivePoints = 0;
     negativePoints = 0;
-
+    ui->Replay->setEnabled(false);
 }
 
 MainWindow2::~MainWindow2()
@@ -31,6 +31,7 @@ void swapLanguage(){
     EnglishLanguage = !EnglishLanguage;
     RussianLanguage = !RussianLanguage;
 }
+
 
 void MainWindow2::on_russian_language_clicked(){
     swapLanguage();
@@ -54,7 +55,10 @@ void MainWindow2::on_new_latter_clicked(){
         word = EnglishMorseCode[N];
         ui->question->setText(word + "  " + QString(char(65+N)));
     }
-    on_replay_clicked();
+    if(ui->Replay->isEnabled()){
+         on_replay_clicked();
+    }
+
 }
 
 void MainWindow2::on_OK_clicked()
@@ -99,3 +103,12 @@ void MainWindow2::on_english_language_triggered()
     ui->EngLan->setText("English lenguage");
 }
 
+void MainWindow2::on_sound_type_stateChanged(int arg1)
+{
+    if(arg1 == 0){
+        ui->Replay->setEnabled(false);
+    }
+    else {
+        ui->Replay->setEnabled(true);
+    }
+}

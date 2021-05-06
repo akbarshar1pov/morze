@@ -8,7 +8,6 @@
 #include <QApplication>
 #include <QTextStream>
 #include <mainwindow2.h>
-#include <mainwindow3.h>
 #include <history.h>
 #include <studywindow.h>
 #include "resource.h"
@@ -243,16 +242,7 @@ void MainWindow::on_letters_triggered()
     test->show();
 }
 
-void MainWindow::on_words_triggered()
-{
-    MainWindow3 *test2 = new MainWindow3();
-    test2->show();
-}
 
-void MainWindow::on_sentences_triggered()
-{
-    //ничего нет
-}
 /**<---------------------------------------------------->**/
 
 /* Ночной режым*/

@@ -13,14 +13,12 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     mainwindow2.cpp \
-    mainwindow3.cpp \
     studywindow.cpp
 
 HEADERS += \
     history.h \
     mainwindow.h \
     mainwindow2.h \
-    mainwindow3.h \
     resource.h \
     studywindow.h
 
@@ -28,7 +26,6 @@ FORMS += \
     history.ui \
     mainwindow.ui \
     mainwindow2.ui \
-    mainwindow3.ui \
     studywindow.ui
 
 TRANSLATIONS += \

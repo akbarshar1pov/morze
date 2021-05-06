@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>470</width>
-    <height>260</height>
+    <width>694</width>
+    <height>324</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -37,6 +37,17 @@
        <layout class="QHBoxLayout" name="horizontalLayout_7">
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_10">
+            <item>
+             <widget class="QCheckBox" name="sound_type">
+              <property name="text">
+               <string>Звук</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
           <item>
            <widget class="QPushButton" name="Replay">
             <property name="minimumSize">
@@ -200,7 +211,7 @@
             <item>
              <widget class="QLabel" name="TRUE">
               <property name="text">
-               <string>True</string>
+               <string>правильных ответов</string>
               </property>
              </widget>
             </item>
@@ -233,7 +244,7 @@
           <item>
            <widget class="QLabel" name="FALSE">
             <property name="text">
-             <string>False</string>
+             <string>неправильных ответов</string>
             </property>
            </widget>
           </item>
@@ -261,7 +272,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>470</width>
+     <width>694</width>
      <height>26</height>
     </rect>
    </property>
