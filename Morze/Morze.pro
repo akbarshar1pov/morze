@@ -21,7 +21,7 @@ HEADERS += \
     mainwindow.h \
     mainwindow2.h \
     mainwindow3.h \
-    resources.h \
+    resource.h \
     studywindow.h
 
 FORMS += \

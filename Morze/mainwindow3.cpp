@@ -5,9 +5,9 @@
 #include <QTextStream>
 #include <QDir>
 #include <QString>
+#include "resource.h"
 
 
-QString NameLan = ":/file/English.txt";
 
 MainWindow3::MainWindow3(QWidget *parent) :
     QMainWindow(parent),
@@ -21,12 +21,14 @@ MainWindow3::~MainWindow3()
     delete ui;
 }
 
+QString LanguageFilePath = ":/file/English.txt";
+
 void MainWindow3::on_pushButton_clicked()
 {
         srand(time(0));
-        QFile file(NameLan);
+        QFile file(LanguageFilePath);
         if(!file.open(QFile::ReadOnly | QFile::Text)){
-            ui->statusbar->showMessage(NameLan + " error open",5000);
+            ui->statusbar->showMessage(LanguageFilePath + " error open",5000);
             return;
         }
         QString text;
@@ -45,13 +47,13 @@ void MainWindow3::on_pushButton_clicked()
 void MainWindow3::on_radioButton_toggled(bool checked)
 {
     if(checked){
-        NameLan = ":/file/English.txt";
+        LanguageFilePath = ":/file/English.txt";
     }
 }
 
 void MainWindow3::on_radioButton_2_toggled(bool checked)
 {
     if(checked){
-        NameLan = ":/file/Russian.txt";
+        LanguageFilePath = ":/file/Russian.txt";
     }
 }

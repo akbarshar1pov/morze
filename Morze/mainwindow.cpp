@@ -11,8 +11,10 @@
 #include <mainwindow3.h>
 #include <history.h>
 #include <studywindow.h>
+#include "resource.h"
 
 bool chenger = true;
+QString Save = "Сохранен";
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -177,6 +179,7 @@ void MainWindow::on_toEnglish_triggered()
     } else if (position == 2) {
         ui->label_2->setText("Russian language");
     }
+    Save = "Save";
 }
 
 void MainWindow::on_toRussion_triggered()
@@ -206,6 +209,7 @@ void MainWindow::on_toRussion_triggered()
     } else if (position == 2) {
         ui->label_2->setText("Русский язык");
     }
+    Save = "Сохранен";
 }
 
 /**<---------------------------------------------------->**/
@@ -458,36 +462,24 @@ void MainWindow::on_study_triggered()
 /* сохраняем перевод в истории */
 void MainWindow::on_actionSaveInHistory_triggered()
 {
-//    QDateTime time = QDateTime();
-//    QString datatime = time.currentDateTime().toString();
-    QString NameLan = "/file/history.txt";
+    QDateTime time = QDateTime();
+    QString datatime = time.currentDateTime().toString(Qt::ISODate);
     QString text = ui->textInputFields->toPlainText();
     QString translate = ui->textBrowser->toPlainText();
-//    QFile history_file(NameLan);
-//    if(history_file.open(QIODevice::WriteOnly | QIODevice::Append | QFile::Text)){
-//        QTextStream stream(&history_file);
-//        stream << "#"<< datatime << "#\n" << text << "\n" << "@\n" << translate << "\n";
-//        history_file.flush();
-//        history_file.close();
-//        ui->statusBar->showMessage(QObject::tr("Сохранен"));
-//    }
-//    else{
-//        if(history_file.exists()){
-//            qDebug() << "error: " << history_file.errorString();
-//        }
-//        else{
-//            ui->statusBar->showMessage(QObject::tr("Ошибка сохранения"));
-//        }
-
-//    }
-    QFile file(NameLan);
-    if(!file.open(QIODevice::WriteOnly | QIODevice::Text)){
-        ui->statusBar->showMessage(NameLan + " error open",5000);
+    QDir dir;
+    if (!dir.exists(HISTORY_PATH))
+        dir.mkpath(HISTORY_PATH);
+    QFile file(HISTORY_PATH + HISTORY_FILE_NAME);
+    if(!file.open(QIODevice::WriteOnly | QIODevice::Append)){
+        ui->statusBar->showMessage(HISTORY_PATH, 5000);
         return;
     }
-    QTextStream stream(&file), lineIn(&text);
-    for(int i=0;!stream.atEnd();++i){
-        stream << text << "\n" << translate << "\n";
+    else{
+        QTextStream stream(&file);
+                stream << "#QData\n"<< datatime << "\n#QStart\n" << text << "\n#QTranslate\n" << translate << "\n#QEnd\n";
+                file.flush();
+                file.close();
+                ui->statusBar->showMessage(Save, 5000);
     }
     file.close();
 }

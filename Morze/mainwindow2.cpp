@@ -1,7 +1,7 @@
 #include "mainwindow2.h"
 #include "ui_mainwindow2.h"
 #include <windows.h>
-#include "resources.h"
+#include "resource.h"
 
 QString word;
 bool RussianLanguage = false;
@@ -9,11 +9,15 @@ bool EnglishLanguage = true;
 int positivePoints = 0;
 int negativePoints = 0;
 
+
 MainWindow2::MainWindow2(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow2)
 {
     ui->setupUi(this);
+    positivePoints = 0;
+    negativePoints = 0;
+
 }
 
 MainWindow2::~MainWindow2()
@@ -33,32 +37,33 @@ void MainWindow2::on_russian_language_clicked(){
 }
 
 void MainWindow2::on_english_language_clicked(){
-   swapLanguage();
+    swapLanguage();
 }
 
 /**<---------------------------------------------------->**/
 
 void MainWindow2::on_new_latter_clicked(){
+    ui->question->setAlignment(Qt::AlignCenter);
     if(RussianLanguage){
         int N = rand()%32;
-        word = RusWords[N];
-        ui->otvet->setText(word + "  " + RusLetters[N]);
+        word = RussianMorseCode[N];
+        ui->question->setText(word + "  " +RussianLetters[N]);
     }
     else if(EnglishLanguage){
         int N = rand()%26;
-        word = EngWords[N];
-        ui->otvet->setText(word + "  " + char(65+N));
+        word = EnglishMorseCode[N];
+        ui->question->setText(word + "  " + QString(char(65+N)));
     }
     on_replay_clicked();
 }
 
 void MainWindow2::on_OK_clicked()
 {
-    QString word2 = ui->_TEXT->text();
-    if(word == word2){
+    QString word2 = ui->answer->text();
+    if(word.replace(L'•', '.') == word2){
         ++positivePoints;
        ui->_True->setText(QString::number(positivePoints));
-       ui->_TEXT->clear();
+       ui->answer->clear();
        on_new_latter_clicked();
     }
     else{

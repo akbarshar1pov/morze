@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>915</width>
-    <height>461</height>
+    <width>933</width>
+    <height>473</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,26 +23,53 @@
       <widget class="QWidget" name="layoutWidget">
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
-         <widget class="QComboBox" name="comboBox_2">
-          <property name="enabled">
-           <bool>true</bool>
+         <widget class="QLabel" name="start">
+          <property name="text">
+           <string>От</string>
           </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QDateEdit" name="start_from_date"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="end">
+          <property name="text">
+           <string>До</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QDateEdit" name="end_from_date"/>
+        </item>
+        <item>
+         <widget class="QPushButton" name="sorted">
+          <property name="text">
+           <string>Найти</string>
+          </property>
+          <property name="shortcut">
+           <string>Enter, Return</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="data_of_translates">
           <property name="minimumSize">
            <size>
-            <width>200</width>
-            <height>20</height>
+            <width>400</width>
+            <height>0</height>
            </size>
           </property>
          </widget>
         </item>
         <item>
-         <spacer name="horizontalSpacer_2">
+         <spacer name="horizontal_spacer">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>200</width>
+            <width>150</width>
             <height>20</height>
            </size>
           </property>
@@ -69,7 +96,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>915</width>
+     <width>933</width>
      <height>26</height>
     </rect>
    </property>

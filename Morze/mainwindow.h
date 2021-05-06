@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QTranslator>
+#include "QDir"
 
 namespace Ui {
 class MainWindow;
@@ -37,12 +38,11 @@ private slots:
     void on_save_file_triggered();
     void on_history_2_triggered();
     void on_study_triggered();
-
     void on_history_triggered();
-
     void on_actionSaveInHistory_triggered();
-
     void on_saveFile_triggered();
+
+    void on_comboBox_activated(const QString &arg1);
 
 private:
     bool Ru;
@@ -52,12 +52,6 @@ private:
     Ui::MainWindow *ui;
     QString to_morze(const QString & str);
     QString toREP(QString str);
-    const QString RussianMorseCode[33] = {"•-", "-•••", "•--",  "--•",  "-••",  "•",  "•",  "•••-",  "--••",  "••",  "•---",  "-•-",  "•-••",  "--",  "-•",  "---",  "•--•",  "•-•",  "•••",  "-",  "••-",  "••-•",  "••••",  "-•-•",  "---•",  "----",  "--•-",  "--•--",  "-•--",  "-••-",  "••-••",  "••--",  "•-•-"};
-    const QString RussianLetters[33] = {"а", "б", "в",  "г",  "д",  "е",  "ё",  "ж",  "з",  "и",  "й",  "к",  "л",  "м",  "н",  "о",  "п",  "р",  "с",  "т",  "у",  "ф",  "х",  "ц",  "ч",  "ш",  "щ",  "ъ",  "ы",  "ь",  "э",  "ю",  "я"};
-    const QString RumberAndPunct[25] = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".", ",", ":", ";", "(", ")", "\'", "\"", "-", "/", "?", "!", "@", " ", "\n"};
-    const QString NumberAndPunctMorseCode[25] = {"-----", "•----", "••---", "•••--", "••••-", "•••••", "-••••", "--•••", "---••", "----•", "••••••", "•-•-•-", "---•••", "-•-•-", "-•--•-", "-•--•-", "•----•", "•-••-•", "-••••-", "-••-•", "••--••", "--••--", "•--•-•", "", "\n"};
-    const QString EnglishLetters[26] = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
-    const QString EnglishMorseCode[26] = {"•-", "-•••", "-•-•", "-••", "•", "••-•", "--•", "••••", "••", "•---", "-•-", "•-••", "--", "-•", "---", "•--•", "--•-", "•-•", "•••", "-", "••-", "•••-", "•--", "-••-", "-•--", "--••"};
 };
 
 #endif // MAINWINDOW_H
