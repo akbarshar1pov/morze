@@ -3,7 +3,7 @@
 #include <windows.h>
 #include "resource.h"
 
-QString word;
+QString word = "start";
 bool RussianLanguage = false;
 bool EnglishLanguage = true;
 int positivePoints = 0;
@@ -17,6 +17,9 @@ MainWindow2::MainWindow2(QWidget *parent) :
     ui->setupUi(this);
     positivePoints = 0;
     negativePoints = 0;
+    word = "start";
+    RussianLanguage = false;
+    EnglishLanguage = true;
     ui->Replay->setEnabled(false);
 }
 
@@ -32,15 +35,15 @@ void swapLanguage(){
     RussianLanguage = !RussianLanguage;
 }
 
-
-void MainWindow2::on_russian_language_clicked(){
+void MainWindow2::on_EngLan_clicked()
+{
     swapLanguage();
 }
 
-void MainWindow2::on_english_language_clicked(){
+void MainWindow2::on_RusLan_clicked()
+{
     swapLanguage();
 }
-
 /**<---------------------------------------------------->**/
 
 void MainWindow2::on_new_latter_clicked(){
@@ -56,37 +59,30 @@ void MainWindow2::on_new_latter_clicked(){
         ui->question->setText(word + "  " + QString(char(65+N)));
     }
     if(ui->Replay->isEnabled()){
-         on_replay_clicked();
+         on_Replay_clicked();
     }
 
 }
 
 void MainWindow2::on_OK_clicked()
 {
-    QString word2 = ui->answer->text();
-    if(word.replace(L'•', '.') == word2){
-        ++positivePoints;
-       ui->_True->setText(QString::number(positivePoints));
-       ui->answer->clear();
-       on_new_latter_clicked();
+    if(ui->OK->text() == "Start" || ui->OK->text() == "Начать"){
+        ui->OK->setText("Ok");
+        on_new_latter_clicked();
     }
     else{
-        ++negativePoints;
-        ui->_False->setText(QString::number(negativePoints));
-    }
-}
-
-void MainWindow2::on_replay_clicked()
-{
-    for(int i=0; i < word.size(); ++i){
-        if(word[i] == '.'){
-            Beep(1000,250);
+        QString word2 = ui->answer->text();
+        if(word.replace(L'•', '.') == word2){
+            ++positivePoints;
+           ui->_True->setText(QString::number(positivePoints));
+           ui->answer->clear();
+           on_new_latter_clicked();
         }
-        else if(word[i] == '-'){
-            Beep(1000,500);
+        else{
+            ++negativePoints;
+            ui->_False->setText(QString::number(negativePoints));
         }
     }
-    Sleep(500);
 }
 
 void MainWindow2::on_russian_language_triggered()
@@ -110,5 +106,21 @@ void MainWindow2::on_sound_type_stateChanged(int arg1)
     }
     else {
         ui->Replay->setEnabled(true);
+    }
+}
+
+void MainWindow2::on_Replay_clicked()
+{
+    for (int i = 0; i < word.size(); ++i) {
+        if (word[i] == '-') {
+            Beep(1000, 500);
+            Sleep(100);
+        } else if (word[i] == ' ' && word[i+1] == ' ') {
+            Sleep(700);
+            i += 3;
+        } else {
+            Beep(1000, 250);
+            Sleep(100);
+        }
     }
 }
