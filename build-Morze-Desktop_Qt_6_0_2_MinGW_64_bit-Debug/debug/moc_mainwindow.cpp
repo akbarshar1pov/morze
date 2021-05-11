@@ -157,13 +157,11 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 12: _t->on_nightMode_triggered(); break;
         case 13: _t->on_letters_triggered(); break;
         case 14: _t->on_textInputFields_textChanged(); break;
-        case 15: _t->on_save_file_triggered(); break;
         case 16: _t->on_history_2_triggered(); break;
         case 17: _t->on_study_triggered(); break;
         case 18: _t->on_history_triggered(); break;
         case 19: _t->on_actionSaveInHistory_triggered(); break;
         case 20: _t->on_saveFile_triggered(); break;
-        case 21: _t->on_comboBox_activated((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         default: ;
         }
     }
