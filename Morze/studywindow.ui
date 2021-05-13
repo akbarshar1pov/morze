@@ -41,6 +41,9 @@ p, li { white-space: pre-wrap; }
       </property>
      </widget>
     </item>
+    <item row="1" column="0">
+     <widget class="QTreeView" name="treeView"/>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">

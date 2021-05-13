@@ -13,11 +13,13 @@
 #include <QtGui/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTextBrowser>
+#include <QtWidgets/QTreeView>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -30,6 +32,7 @@ public:
     QWidget *centralwidget;
     QGridLayout *gridLayout;
     QTextBrowser *textBrowser;
+    QTreeView *treeView;
     QMenuBar *menubar;
     QMenu *menu;
     QStatusBar *statusbar;
@@ -61,6 +64,11 @@ public:
         textBrowser->setFont(font);
 
         gridLayout->addWidget(textBrowser, 0, 0, 1, 1);
+
+        treeView = new QTreeView(centralwidget);
+        treeView->setObjectName(QString::fromUtf8("treeView"));
+
+        gridLayout->addWidget(treeView, 1, 0, 1, 1);
 
         studywindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(studywindow);
