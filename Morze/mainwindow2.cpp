@@ -21,6 +21,12 @@ MainWindow2::MainWindow2(QWidget *parent) :
     RussianLanguage = false;
     EnglishLanguage = true;
     ui->Replay->setEnabled(false);
+    if(QLocale::system().name() == "ru_RU"){
+        on_russian_language_triggered();
+    }
+    else{
+        on_english_language_triggered();
+    }
 }
 
 MainWindow2::~MainWindow2()
@@ -129,4 +135,5 @@ void MainWindow2::on_answer_textChanged(const QString &arg1)
 {
     QString text = arg1;
     ui->answer->setText(text.replace('.', L'•'));
+
 }

@@ -24,6 +24,12 @@ MainWindow::MainWindow(QWidget *parent) :
     changed = false;
     position = 0;
     SetIcons();
+    if(QLocale::system().name() == "ru_RU"){
+        on_toRussion_triggered();
+    }
+    else{
+        on_toEnglish_triggered();
+    }
 }
 
 MainWindow::~MainWindow()
