@@ -24,6 +24,12 @@ MainWindow::MainWindow(QWidget *parent) :
     changed = false;
     position = 0;
     SetIcons();
+    if(QLocale::system().name() == "ru_RU"){
+        on_toRussion_triggered();
+    }
+    else{
+        on_toEnglish_triggered();
+    }
 }
 
 MainWindow::~MainWindow()
@@ -289,7 +295,9 @@ void MainWindow::on_nightMode_triggered()
 /*Перевод текста из файла */
 void MainWindow::on_openFile_triggered()
 {
-    QString filePath = QFileDialog::getOpenFileName(this, QObject::tr("Открыть файл"));
+    QString filePath = QFileDialog::getOpenFileName(this,tr("Open Document"),
+                                                    QDir::currentPath(),
+                                                    tr("text files (*.txt)"));
     QFile mFile(filePath);
 
     if(!mFile.open(QFile::ReadOnly | QFile::Text)) {

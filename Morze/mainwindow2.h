@@ -27,6 +27,8 @@ private slots:
 
     void on_RusLan_clicked();
 
+    void on_answer_textChanged(const QString &arg1);
+
 private:
     Ui::MainWindow2 *ui;
 };
