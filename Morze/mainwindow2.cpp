@@ -124,3 +124,9 @@ void MainWindow2::on_Replay_clicked()
         }
     }
 }
+
+void MainWindow2::on_answer_textChanged(const QString &arg1)
+{
+    QString text = arg1;
+    ui->answer->setText(text.replace('.', L'•'));
+}

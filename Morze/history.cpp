@@ -35,6 +35,7 @@ void history::parsHistory(){
             }
         }
     }
+    on_data_of_translates_activated(0);
 }
 
 
@@ -66,6 +67,7 @@ void history::on_sorted_clicked()
             }
         }
     }
+    on_data_of_translates_activated(0);
 }
 
 

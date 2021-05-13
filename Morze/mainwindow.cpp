@@ -289,7 +289,9 @@ void MainWindow::on_nightMode_triggered()
 /*Перевод текста из файла */
 void MainWindow::on_openFile_triggered()
 {
-    QString filePath = QFileDialog::getOpenFileName(this, QObject::tr("Открыть файл"));
+    QString filePath = QFileDialog::getOpenFileName(this,tr("Open Document"),
+                                                    QDir::currentPath(),
+                                                    tr("text files (*.txt)"));
     QFile mFile(filePath);
 
     if(!mFile.open(QFile::ReadOnly | QFile::Text)) {
