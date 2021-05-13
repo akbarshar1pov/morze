@@ -21,5 +21,7 @@
         <file>img/language.png</file>
         <file>img/themes.png</file>
         <file>img/history.png</file>
+        <file>englishFile.txt</file>
+        <file>russianFile.txt</file>
     </qresource>
 </RCC>

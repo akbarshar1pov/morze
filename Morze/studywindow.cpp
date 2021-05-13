@@ -22,28 +22,29 @@ studywindow::~studywindow()
 
 void studywindow::on_action_triggered()
 {
-    QFile russianFile("F:/REP/morze/Morze/russianFile.txt");
+    QFile russianFile(":/russianFile.txt");
 
     if(!russianFile.open(QFile::ReadOnly | QFile::Text)) {
         QMessageBox::warning(this, "title", "file not open");
     }
     QTextStream in(&russianFile);
     QString text = in.readAll();
-    ui->textBrowser->setText(text);
-
+    ui->textBrowser->setPlainText(text);
+    qDebug() << text;
     russianFile.close();
 }
 
 void studywindow::on_action_2_triggered()
 {
-    QFile englishFile("F:/REP/morze/Morze/englishFile.txt");
+    QFile englishFile(":/englishFile.txt");
 
     if(!englishFile.open(QFile::ReadOnly | QFile::Text)) {
         QMessageBox::warning(this, "title", "file not open");
     }
     QTextStream in(&englishFile);
     QString text = in.readAll();
-    ui->textBrowser->setText(text);
+    ui->textBrowser->setPlainText(text);
+    qDebug() << text;
 
     englishFile.close();
 }
