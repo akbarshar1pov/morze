@@ -7,6 +7,7 @@ studywindow::studywindow(QWidget *parent) :
     ui(new Ui::studywindow)
 {
     ui->setupUi(this);
+
     if(QLocale::system().name() == "ru_RU") {
         on_action_triggered();
     } else {
