@@ -23,5 +23,7 @@
         <file>img/history.png</file>
         <file>englishFile.txt</file>
         <file>russianFile.txt</file>
+        <file>img/englishAlphabet.png</file>
+        <file>img/numbers.jpg</file>
     </qresource>
 </RCC>

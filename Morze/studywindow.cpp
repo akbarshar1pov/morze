@@ -7,7 +7,11 @@ studywindow::studywindow(QWidget *parent) :
     ui(new Ui::studywindow)
 {
     ui->setupUi(this);
-
+    QPixmap pix("");
+    ui->label->setStyleSheet("border-image:url(:/img/englishAlphabet.png)");
+    ui->label_2->setStyleSheet("border-image:url(:/img/numbers.jpg)");
+    ui->label->setPixmap(pix);
+    ui->label_2->setPixmap(pix);
     if(QLocale::system().name() == "ru_RU") {
         on_action_triggered();
     } else {
